@@ -1,0 +1,408 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+/*
+font-style: 400;    --> Regular
+font-style: 700;    --> Bold
+font-size: 16px = 1rem
+*/
+
+/*variables en css*/
+:root{
+    --color-DarkBlue300-acento: #0A3871;
+    --color-DarkBlue200-hover: #356EA9;
+    --color-Gray400-texto: #495057;
+    --color-Gray500-texto: #343A40;
+    --color-LightBlue100-fondo: #f3f5fc;
+    --color-White: #ffffff;
+    --color-botonInactivo: #d8dfe8;
+    --font-inter: "Inter", sans-serif;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    padding-left: 1.5%;
+    padding-right: 3%;
+    background-color: var(--color-LightBlue100-fondo);
+}
+
+.logo{
+    height: 48px;
+}
+
+/*parte izquierda*/
+.izquierda{
+    width: 47.22%;
+    height: 96vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 16px;
+    align-items: flex-start;
+    padding-bottom: 1%;
+}
+
+/*agrego un titulo para que se entienda mejor la funcionalidad de la página*/
+.titulo{
+    font-family: var(--font-inter);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-DarkBlue300-acento);
+}
+
+/*recuadro para ingresar el texto a encriptar*/
+.mensajeInicial{
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    resize: none;
+    background-color: var(--color-LightBlue100-fondo);
+}
+
+textarea{
+    color: var(--color-DarkBlue300-acento);
+    font-family: var(--font-inter);
+    font-size: 2rem;
+    font-weight: 400;
+    border: none;
+    outline: none;
+    line-height: 150%;
+}
+
+/*mensaje que ahí debe escribirse*/
+::placeholder{
+    color: var(--color-DarkBlue300-acento);
+    font-family: var(--font-inter);
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+/*mensaje de advertencia - definición del espacio que ocupa*/
+.informacion__area{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    gap: 16px;
+}
+
+/*mensaje de advertencia - formato del ícono*/
+.informacion__icono{
+    width: 16px;
+    height: 16px;
+}
+
+/*mensaje de advertencia - formato del texto*/
+.informacion__texto{
+    font-family: var(--font-inter);
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: var(--color-Gray400-texto);
+}
+
+/*botones - definición del espacio que ocupan*/
+.botones__area{
+    height: 67px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/*botones - formato*/
+.btn__encriptar{
+    height: 67px;
+    width: 48.24%;
+    font-family: var(--font-inter);
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--color-White);
+    background-color: var(--color-DarkBlue300-acento);
+    border: 1px solid var(--color-DarkBlue300-acento);
+    border-radius: 24px;
+    padding: 24px 24px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+/*botones - formato*/
+.btn__desencriptar{
+    height: 67px;
+    width: 48.24%;
+    font-family: var(--font-inter);
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--color-DarkBlue300-acento);
+    background-color: var(--color-botonInactivo);
+    border: 1px solid var(--color-DarkBlue300-acento);
+    border-radius: 24px;
+    padding: 24px 24px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+/*parte derecha*/
+.derecha{
+    width: 27.78%;
+    height: 96vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 16px;
+    align-items: center;
+    background-color: var(--color-White);
+    border-radius: 32px;
+    box-shadow: 0px 8px 16px -8px var(--color-Gray400-texto);
+    padding: 2% 2% 1%;
+}
+
+/*imagen que desaparece al encriptar el texto*/
+.ocultar__munieco{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+
+/*Titulo que desaparece al encriptar el texto*/
+.ocultar__titulo{
+    font-family: var(--font-inter);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-Gray500-texto);
+    text-align: center;
+    padding: 5% 0% 2.5%;
+}
+
+/*texto que desaparece al encriptar el texto*/
+.ocultar__texto{
+    font-family: var(--font-inter);
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--color-Gray400-texto);
+    text-align: center;
+    padding: 2.5% 15% 5%;
+}
+
+/*área que muestra el texto encriptado - se muestra luego de hacer click en el botón*/
+.mensajeFinal{
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    resize: none;
+}
+
+/*boton COPIAR - formato*/
+.btn__copiar{
+    width: 100%;
+    height: 67px;
+    font-family: var(--font-inter);
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--color-DarkBlue300-acento);
+    background-color: var(--color-White);
+    border: 1px solid var(--color-DarkBlue300-acento);
+    border-radius: 24px;
+    padding: 24px 24px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+/*FOOTER*/
+footer{
+    background-color: var(--color-DarkBlue300-acento);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.footer__text{
+    font-family: var(--font-inter);
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--color-White);
+}
+
+/*FORMATO DE LOS POPUP o MENSAJES*/
+.popup__texto{
+    font-family: var(--font-inter);
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--color-Gray500-texto);
+    padding: 1%;
+}
+
+.popup__box{
+    background-color: var(--color-White);
+    width: 50%;
+    padding: 2% 2% 2% 2%;
+    border-radius: 24px;
+}
+
+.popup__button{
+    width: 120px;
+    height: 50px;
+    font-family: var(--font-inter);
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--color-White);
+    background-color: var(--color-DarkBlue300-acento);
+    padding: 16px;
+    border-radius: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    box-shadow: none;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.popup__closeButton{
+    color: var(--color-botonInactivo);
+}
+
+.popup__closeButton:hover{
+        color: var(--color-Gray500-texto);
+}
+
+/*HOVER BUTTONS*/
+/*botones - formato cuando se pasa el cursor por arriba*/
+.btn__encriptar:hover,
+.btn__desencriptar:hover,
+.btn__copiar:hover,
+.popup__button:hover{
+    background-color: var(--color-DarkBlue200-hover);
+    color: var(--color-White);
+}
+
+/*///////////////////////////////////////////////////////////////////////////////////////////////*/
+/*DISEÑO RESPONSIVO - TABLET*/
+
+@media (max-width: 942px) {
+    
+    main{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-around;
+        gap: 16px;
+        padding: 8% 2%;
+    }
+
+    .izquierda{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        gap: 16px;
+        align-items: flex-start;
+        padding-top: 0%;
+        padding-bottom: 0%;
+    }
+    
+    .titulo{
+        font-size: 2rem;
+    }
+
+    .derecha{
+        width: 100%;
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 6%;
+        padding-bottom: 3%;
+    }
+       
+    .ocultar__munieco{
+        display: none;
+    }
+     
+    .ocultar__titulo{
+        padding: 0% 0% 1%;
+    }
+    
+    .ocultar__texto{
+        padding: 1% 0% 0%;
+    }
+    
+    /*área que muestra el texto encriptado - se muestra luego de hacer click en el botón*/
+    .mensajeFinal{
+        width: 90%;
+    }
+    
+    /*boton COPIAR - formato*/
+    .btn__copiar{
+        width: 90%;
+    }
+
+    /*FOOTER*/
+    footer{
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 16px;
+    }
+    
+    .footer__text{
+        text-align: center;
+    }
+    .popup__box{
+        width: 70%;
+    }   
+}    
+
+/*///////////////////////////////////////////////////////////////////////////////////////////////*/
+/*DISEÑO RESPONSIVO - CELULAR*/
+@media (max-width: 600px) {
+    main{
+        padding: 8% 4%;
+    }
+    
+    .izquierda{
+        height: 70vh;
+        gap: 6px;
+        padding-bottom: 30%;
+    }
+
+    .derecha{
+        height: 30vh;
+    }
+
+    .mensajeInicial{
+        height: 50%;
+    }
+    
+    .botones__area{
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 16px;
+    }
+    
+    /*botones - formato*/
+    .btn__encriptar{
+        width: 100%;
+    }
+    
+    /*botones - formato*/
+    .btn__desencriptar{
+        width: 100%;
+    }
+    .popup__box{
+        width: 90%;
+    }   
+}

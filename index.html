@@ -1,11 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+<html lang="es-ar">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Encriptador de Texto Alura Latam por Vanina Denegri</title>
+        <meta name="author" content="Vanina Denegri">
+        <meta name="description" content="Challenge ONE de Alura Latam. Encriptador simple de texto con diseño responsivo." />
+        <link rel="shortcut icon" href="assets/Favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="styles/style.css">    
+    </head>
+
+    <body>
+        <main>
+            <div> <!-- LOGO DENTRO DEL BODY Y NO EN EL ENCABEZADO PARA QUE QUEDE MEJOR-->
+                <img class="logo" src="assets/Logo.png" alt="Logo de Alura con forma de a minúscula">
+            </div>
+            
+            <section class="izquierda">
+                <h1 class="titulo">ENCRIPTADOR DE TEXTO</h1>                
+                <textarea class="mensajeInicial" id="mensajeInicial" name="mensaje" rows="10" cols="30" placeholder="Ingrese el texto aquí"> </textarea>        
+                               
+                <div class="informacion__area">
+                    <img class="informacion__icono" src="assets/Advertencia.png" alt="Icono de exclamación">
+                    <p class="informacion__texto">Solo letras minúsculas y sin acentos</p>
+                </div>
+                   
+                <div class="botones__area">
+                    <button class="btn__encriptar" type="button" onclick="encriptar()" id="encriptar">Encriptar</button>
+                    <button class="btn__desencriptar" type="button" onclick="desencriptar()" id="desencriptar">Desencriptar</button>
+                </div>
+            </section>
+
+            <section class="derecha">
+                <textarea class="mensajeFinal" id="mensajeFinal" name="resultado" rows="10" cols="30" hidden> </textarea>
+                <button class="btn__copiar" type="button"  onclick="copiarTexto()" id="copiar" hidden>Copiar</button>
+                
+                <div id="ocultar">
+                    <img class="ocultar__munieco" id="ocultarMunieco" src="assets/Muñeco.png" alt="Ilustración de niño arrodillado con una lupa mirando un diamante" id="ocultarMunieco">
+                    <h2 class="ocultar__titulo" id="ocultarTitulo">Ningún mensaje fue encontrado</h2>
+                    <h3 class="ocultar__texto" id="ocultarTexto">Ingresa el texto que desees encriptar o desencriptar</h3>
+                </div>
+            </section>
+        </main>
+    </body>
+
+    <!-- PIE DE PAGINA CON DATOS PERSONALES -->
+    <footer>
+        <p class="footer__text">Kevin Davalos | 2024</p>
+    </footer>
+   
+    <!-- VINCULO CON LOS SCRIPTS -->
+    <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   
 </html>
